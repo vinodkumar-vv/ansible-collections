@@ -21,7 +21,7 @@ include_host_filters:
 #  - "freeform_tags.OS == 'Oracle Linux'"
 
 filters:
-  freeform_tags.OS: Oracle Linux
+  - freeform_tags.OS: Oracle Linux
 
 
 #Example group results by key

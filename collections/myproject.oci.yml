@@ -18,7 +18,8 @@ compartments:
 debug: true
 
 # Process only the primary vnic of a compute instance
-primary_vnic_only: False
+#primary_vnic_only: True
+use_private_ip: true
 
 
 default_groups: []

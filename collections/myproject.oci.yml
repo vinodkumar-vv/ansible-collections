@@ -11,5 +11,6 @@ hostname_format:
    - private_ip
 
 # Create Inventory list with diplay name 
-#hostname_format: display_name
+hostname_format:
+   - display_name
 

@@ -18,7 +18,7 @@ hostname_format: private_ip
 
 include_host_filters:
   - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
-  - "image_operating_system is match('Oracle Linux.*')"
+  - "'Oracle Linux' in operating_system"
 #  - "'Oracle Linux' in image_operating_system"
 
 #Example group results by key

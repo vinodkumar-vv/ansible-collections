@@ -9,6 +9,9 @@ compartments:
 # Create Inventory list with Private IP
 hostname_format: private_ip
 
+include_host_filters:
+  - lifecycle_state= "RUNNING"
+
 # Create Inventory list with diplay name 
 #hostname_format: display_name
 

@@ -20,6 +20,6 @@ include_host_filters:
   - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
   - "'Oracle Linux' in image_operating_system"
 
-# Example group results by key
-#keyed_groups:
- # - key: availability_domain
+Example group results by key
+keyed_groups:
+  - key: availability_domain

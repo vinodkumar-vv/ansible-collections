@@ -17,8 +17,8 @@ hostname_format: private_ip
 #  - "'Oracle Linux' in image_operating_system"
 
 include_host_filters:
-   "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
-   "'OracleLinux' == freeform_tags.OS"
+   - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
+   - "'OracleLinux' == freeform_tags.OS"
 
 #filters:
 #  - freeform_tags.OS: OracleLinux

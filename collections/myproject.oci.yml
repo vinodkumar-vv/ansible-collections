@@ -26,7 +26,7 @@ include_host_filters:
 # - lifecycle_state: RUNNING
 default_groups: []
 groups:
-   Test: "'OracleLinux' == freeform_tags.OS"
+   OracleLinux: "'OracleLinux' == freeform_tags.OS"
 #  CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
 #  Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
 #default_groups: []

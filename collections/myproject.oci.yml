@@ -17,18 +17,21 @@ hostname_format: private_ip
 #  - "'Oracle Linux' in image_operating_system"
 
 include_host_filters:
-#  - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
-  - "'OracleLinux' == freeform_tags.OS"
+   "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
+   "'OracleLinux' == freeform_tags.OS"
 
 #filters:
 #  - freeform_tags.OS: OracleLinux
 # - lifecycle_state: RUNNING
+#default_groups: []
+#groups:
+#  Test: "'OracleLinux' == freeform_tags.OS"
+#  CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
+#  Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
 default_groups: []
 groups:
-  Test: "'OracleLinux' == freeform_tags.OS"
-  CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
-  Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
-
+        CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
+        Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
 #Example group results by key
 #keyed_groups:
 #  - key: availability_domain

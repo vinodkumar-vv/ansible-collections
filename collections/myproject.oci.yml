@@ -2,7 +2,7 @@ plugin: oracle.oci.oci
 regions:
   - us-ashburn-1
 compartments:
-  - compartment_ocid: ocid1.compartment.oc1..xxxxxx
+  - compartment_ocid: ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq
     fetch_compute_hosts: true
     fetch_hosts_from_subcompartments: false
 use_private_ip: true

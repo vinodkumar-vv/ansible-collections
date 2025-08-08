@@ -1,28 +1,11 @@
 plugin: oracle.oci.oci
-
-# Example select regions
 regions:
   - us-ashburn-1
-  
-# Select compartment by ocid  
 compartments:
   - compartment_ocid: ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq
     fetch_compute_hosts: true
     fetch_hosts_from_subcompartments: false
-
-hostname_format_preferences:
-  - "display_name"
-  - "hostname_label"
-  - "id"
-
+hostname_format: private_ip
+use_private_ip: true
 debug: true
-
-# Process only the primary vnic of a compute instance
-primary_vnic_only: False
-use_private_ip: True
-
-
-default_groups: []
-groups:
-        CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
-        Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
+primary_vnic_only: true

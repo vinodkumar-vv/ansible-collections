@@ -16,13 +16,13 @@ hostname_format: private_ip
 #include_host_filters:
 #  - "'Oracle Linux' in image_operating_system"
 
-#include_host_filters:
- # - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
-#  - "freeform_tags.OS == 'Oracle Linux'"
+include_host_filters:
+  - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
+  - "'OracleLinux' == freeform_tags.OS"
 
-filters:
-  - freeform_tags.OS: OracleLinux
-  - lifecycle_state: RUNNING
+#filters:
+#  - freeform_tags.OS: OracleLinux
+# - lifecycle_state: RUNNING
 
 
 #Example group results by key

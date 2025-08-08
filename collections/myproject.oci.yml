@@ -8,3 +8,6 @@ compartments:
 hostname_format: private_ip
 use_private_ip: true
 primary_vnic_only: true
+
+hostname_format: display_name
+

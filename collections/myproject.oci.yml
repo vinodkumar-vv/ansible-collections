@@ -1,11 +1,13 @@
- plugin: oracle.oci.oci
- regions:
+plugin: oracle.oci.oci
+regions:
    - us-ashburn-1
- compartments:
+compartments:
    - compartment_ocid: ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq
      fetch_compute_hosts: true
      fetch_hosts_from_subcompartments: false
- hostname_format: private_ip
- use_private_ip: true
- debug: true
- primary_vnic_only: true
+hostname_format: private_ip
+use_private_ip: true
+debug: true
+primary_vnic_only: true
+include_host_filters:
+  - "image_operating_system == 'Oracle Linux'"

@@ -24,7 +24,9 @@ include_host_filters:
 #  - freeform_tags.OS: OracleLinux
 # - lifecycle_state: RUNNING
 
+groups:
+  Test: "'OracleLinux' == freeform_tags.OS"
 
 #Example group results by key
-keyed_groups:
-  - key: availability_domain
+#keyed_groups:
+#  - key: availability_domain

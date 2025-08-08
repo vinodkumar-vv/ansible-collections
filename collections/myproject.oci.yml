@@ -7,10 +7,8 @@ compartments:
      fetch_hosts_from_subcompartments: false
 
 # Create Inventory list with Private IP
-hostname_format: 
-   - private_ip
+hostname_format: private_ip
 
 # Create Inventory list with diplay name 
-hostname_format:
-   - display_name
+#hostname_format: display_name
 

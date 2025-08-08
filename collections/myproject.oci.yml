@@ -10,10 +10,10 @@ compartments:
     fetch_compute_hosts: true
     fetch_hosts_from_subcompartments: false
 
-#hostname_format_preferences:
-#  - "display_name"
-#  - "hostname_label"
-#  - "id"
+hostname_format_preferences:
+  - "display_name"
+  - "hostname_label"
+  - "id"
 
 debug: true
 

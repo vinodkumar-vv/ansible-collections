@@ -21,7 +21,7 @@ hostname_format: private_ip
 #  - "freeform_tags.OS == 'Oracle Linux'"
 
 filters:
-  - freeform_tags.OS: Oracle Linux
+  - freeform_tags: Oracle Linux
   - lifecycle_state: RUNNING
 
 

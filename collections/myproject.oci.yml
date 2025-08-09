@@ -20,4 +20,5 @@ include_host_filters:
 default_groups: []
 groups:
    OracleLinux: "'OracleLinux' == freeform_tags.OS"
+   OracleAutonomousLinux: "'OracleAutonomousLinux' == freeform_tags.OSAuto"
 

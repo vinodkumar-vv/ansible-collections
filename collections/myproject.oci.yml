@@ -1,6 +1,10 @@
 plugin: oracle.oci.oci
+
+# Example select regions
 regions:
    - us-ashburn-1
+
+# Select compartment by ocid
 compartments:
    - compartment_ocid: ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq
      fetch_compute_hosts: true
@@ -12,7 +16,7 @@ hostname_format: puplic_ip
 # Create Inventory list with Private IP
 #hostname_format: private_ip
 
-# Create Inventory list with diplay name 
+# Create Inventory list with display name 
 #hostname_format: display_name
 
 include_host_filters:

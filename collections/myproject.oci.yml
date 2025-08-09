@@ -20,8 +20,13 @@ include_host_filters:
 #   - "lifecycle_state == 'RUNNING'"      # To get fetch only running instance
 #   - "'OracleLinux' == freeform_tags.OS"  # To get fetch only instance hving with tag OracleLinux
 
+#Disables automatic group creation by the plugin
 default_groups: []
+
+#Create custom groups
 groups:
    OracleLinux: "'OracleLinux' == freeform_tags.OS"
    OracleAutonomousLinux: "'OracleAutonomousLinux' == freeform_tags.OSAuto"
+   Owner: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Tags'].CreatedBy"
+   
 

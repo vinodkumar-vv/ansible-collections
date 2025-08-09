@@ -12,27 +12,12 @@ hostname_format: private_ip
 # Create Inventory list with diplay name 
 #hostname_format: display_name
 
-# This is the key part:
-#include_host_filters:
-#  - "'Oracle Linux' in image_operating_system"
-
 include_host_filters:
-#   - "lifecycle_state == 'RUNNING'"      # to get fetch only running instance
-#   - "'OracleLinux' == freeform_tags.OS"
    - "lifecycle_state == 'RUNNING' and freeform_tags.OS == 'OracleLinux'"
+#   - "lifecycle_state == 'RUNNING'"      # To get fetch only running instance
+#   - "'OracleLinux' == freeform_tags.OS"  # To get fetch only instance hving with tag OracleLinux
 
-#filters:
-#  - freeform_tags.OS: OracleLinux
-# - lifecycle_state: RUNNING
 default_groups: []
 groups:
    OracleLinux: "'OracleLinux' == freeform_tags.OS"
-#  CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
-#  Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
-#default_groups: []
-#groups:
- #       CreatedBy: "'CreatedBy' == defined_tags['Oracle-Standard'].Service"
- #       Created: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Standard'].Service"
-#Example group results by key
-#keyed_groups:
-#  - key: availability_domain
+

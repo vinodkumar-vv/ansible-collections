@@ -21,8 +21,8 @@ hostname_format: puplic_ip
 
 include_host_filters:
    - "lifecycle_state == 'RUNNING' and freeform_tags.OS == 'OracleLinux'"
-#   - "lifecycle_state == 'RUNNING'"      # To get fetch only running instance
-#   - "'OracleLinux' == freeform_tags.OS"  # To get fetch only instance hving with tag OracleLinux
+#   - "lifecycle_state == 'RUNNING'"      # To fetch only running instance
+#   - "'OracleLinux' == freeform_tags.OS"  # To fetch only instance hving with tag OracleLinux
 
 #Disables automatic group creation by the plugin
 default_groups: []

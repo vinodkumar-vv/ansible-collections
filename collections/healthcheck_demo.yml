@@ -26,10 +26,6 @@
       set_fact:
         free_root_gb: "{{ (ansible_mounts | selectattr('mount', 'equalto', '/') | first).size_available // (1024**3) }}"
 
-    - name: Get load average
-      set_fact:
-        load_avg: "{{ uptime_out.stdout | regex_search('load average[s]?: (.+)', '\\1') | default('N/A') }}"
-
 
     - name: Build HTML row for the host
       set_fact:
@@ -40,7 +36,6 @@
             <td>{{ os_version }}</td>
             <td>{{ uptime_days }}</td>
             <td>{{ free_root_gb }}</td>
-            <td>{{ load_avg }}</td>
           </tr>
 
 - name: Email consolidated report
@@ -74,7 +69,7 @@
           <p>Hello Team,</p>
           <p>Please find job run report below:</p>
           <table>
-          <tr><th>Host Name</th><th>Server Type</th><th>OS</th><th>Server Uptime (Days)</th><th>Free Space in / (GB)</th><th>Load  avg </th></tr>
+          <tr><th>Host Name</th><th>Server Type</th><th>OS</th><th>Server Uptime (Days)</th><th>Free Space in / (GB)</th></tr>
           {% for i in groups['all'] %}
             {{ hostvars[i]['html_content']|d('<tr><td>' + i + '</td><td colspan=8><span style=color:red>Server Unreachable</span></td></tr>') }}
           {% endfor %}

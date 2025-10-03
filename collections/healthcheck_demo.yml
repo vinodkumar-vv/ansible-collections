@@ -27,7 +27,7 @@
         free_root_gb: "{{ (ansible_mounts | selectattr('mount', 'equalto', '/') | first).size_available // (1024**3) }}"
  
     - name: Get free root space in percentage
-      command: "df -hT / | awk 'NR==2 {print $6}'"
+      shell: "df -hT / | awk 'NR==2 {print $6}'"
       register: root_available_out
         
     - name: Clean up the value "root_available_out"

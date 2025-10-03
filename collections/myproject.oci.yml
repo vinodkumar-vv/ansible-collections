@@ -6,7 +6,7 @@ regions:
 
 # Select compartment by ocid
 compartments:
-   - compartment_ocid: <ocid1> ############## update OCID here
+   - compartment_ocid: <ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq> ############## update OCID here
      fetch_compute_hosts: true
      fetch_hosts_from_subcompartments: false
 
@@ -32,6 +32,6 @@ default_groups: []
 groups:
    OracleLinux: "'OracleLinux' == freeform_tags.OS"
    OracleAutonomousLinux: "'OracleAutonomousLinux' == freeform_tags.OSAuto"
-   Owner: "'oracle/<ID>' == defined_tags['Oracle-Tags'].CreatedBy" ############## update oracle/<ID> here
+   Owner: "'oracle/vinodkumar.vv@oracle.com' == defined_tags['Oracle-Tags'].CreatedBy" ############## update oracle/<ID> here
    
 

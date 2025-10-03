@@ -47,7 +47,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-    mail_subject: "Yum Cache Job Run Report_{{ lookup('pipe','date +%Y-%m-%d') }}"
+    mail_subject: "Server Health Check Report_{{ lookup('pipe','date +%Y-%m-%d') }}"
   tasks:
     - name: Send health check HTML mail
       mail:

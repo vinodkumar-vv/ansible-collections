@@ -29,6 +29,7 @@
     - name: Get free root space in percentage
       shell: "df -hT / | awk 'NR==2 {print $6}'"
         register: root_available_out
+        
     - name: Clean up the value "root_available_out"
       set_fact:
         root_available: "{{ root_available.stdout | trim }}"

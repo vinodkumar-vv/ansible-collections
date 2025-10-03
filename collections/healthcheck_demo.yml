@@ -25,7 +25,10 @@
     - name: Get free root space in GB
       set_fact:
         free_root_gb: "{{ (ansible_mounts | selectattr('mount', 'equalto', '/') | first).size_available // (1024**3) }}"
-
+ 
+    - name: Get free root space in percentage
+      command: "df -hT / | awk 'NR==2 {print $6}'"
+        register: root_available
 
     - name: Build HTML row for the host
       set_fact:
@@ -36,6 +39,7 @@
             <td>{{ os_version }}</td>
             <td>{{ uptime_days }}</td>
             <td>{{ free_root_gb }}</td>
+            <td><pre>{{ root_available.stdout|default('') }}</pre></td>
           </tr>
 
 - name: Email consolidated report
@@ -67,9 +71,9 @@
           </head>
           <body>
           <p>Hello Team,</p>
-          <p>Please find job run report below:</p>
+          <p>Please find the report below:</p>
           <table>
-          <tr><th>Host Name</th><th>Server Type</th><th>OS</th><th>Server Uptime (Days)</th><th>Free Space in / (GB)</th></tr>
+          <tr><th>Host Name</th><th>Server Type</th><th>OS</th><th>Server Uptime (Days)</th><th>Free Space in / (GB)</th><th>Available Space in / (%)</th></tr>
           {% for i in groups['all'] %}
             {{ hostvars[i]['html_content']|d('<tr><td>' + i + '</td><td colspan=8><span style=color:red>Server Unreachable</span></td></tr>') }}
           {% endfor %}

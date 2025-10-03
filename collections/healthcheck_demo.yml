@@ -68,8 +68,8 @@
       mail:
         host: iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com                  # e.g., smtp.yourdomain.com
         port: 25
-        to: vinodkumar.vv@oracle                        # e.g., your.email@oracle.com
-        from: Ansible@tower.com
+        to: vinodkumar.vv@oracle.com                      # e.g., your.email@oracle.com
+        from: olam.test@oracle.com
         subject: "{{ mail_subject }}"
         charset: utf-8
         subtype: html

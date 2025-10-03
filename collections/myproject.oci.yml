@@ -6,7 +6,7 @@ regions:
 
 # Select compartment by ocid
 compartments:
-   - compartment_ocid: <ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq> ############## update OCID here
+   - compartment_ocid: ocid1.compartment.oc1..aaaaaaaa6f24s5yseohrltkrereoukzf4hkixzliyblq5dvivdvpudislgeq ############## update OCID here
      fetch_compute_hosts: true
      fetch_hosts_from_subcompartments: false
 

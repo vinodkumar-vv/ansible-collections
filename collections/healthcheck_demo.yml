@@ -79,7 +79,7 @@
           <p>Please find the report below:</p>
           <table>
           <tr><th>Host Name</th><th>Server Type</th><th>OS</th><th>Server Uptime (Days)</th><th>Free Space in / (GB)</th><th>Available Space in / (%)</th></tr>
-          {% for i in ansible_play_hosts %}
+          {% for i in groups['all'] %}
             {{ hostvars[i]['html_content']|d('<tr><td>' + i + '</td><td colspan=8><span style=color:red>Server Unreachable</span></td></tr>') }}
           {% endfor %}
           </table>

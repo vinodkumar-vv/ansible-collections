@@ -39,7 +39,7 @@
       set_fact:
         html_content: >-
           <tr>
-            <td>{{ inventory_hostname }}</td>
+            <td>{{ ansible_hostname }}</td>
             <td>{{ server_type }}</td>
             <td>{{ os_version }}</td>
             <td>{{ uptime_days }}</td>
